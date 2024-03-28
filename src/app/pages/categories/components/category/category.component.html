@@ -1,0 +1,9 @@
+<div class="category {{ isSelected ? 'selected' : '' }}">
+    @if (pill) {
+        <div class="pill">
+            <app-pill [color]="pill.color" [text]="pill.text" [hasRadius]="true"></app-pill>
+        </div>
+    }
+    <h3 class="{{ pill ? 'padding-top' : '' }}">{{ title }}</h3>
+    <p>{{ text }}</p>
+</div>

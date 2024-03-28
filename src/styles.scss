@@ -1,1 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+/* Fonts */
+@font-face {
+    font-family: OpenSans;
+    src: url('assets/fonts/open-sans/OpenSans-VariableFont_wdth,wght.ttf');
+}
+
+@font-face {
+    font-family: Eina03;
+    src: url('assets/fonts/eina03/Eina03-Regular.ttf');
+}
+
+@font-face {
+    font-family: Eina03;
+    src: url('assets/fonts/eina03/Eina03-SemiBold.ttf');
+    font-weight: 600;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+* {
+    font-family: OpenSans;
+}
+
+p, body, h1, h2, h3, h4 {
+    margin: 0
+}
+
+body {
+    background-color: #F3F5F8;
+}
+
+/**
+Remove default css button
+*/
+button {
+    all: unset;
+}
+button:focus {
+    outline: revert;
+}
+
+button.primary {
+    background-color: #11ABEC;
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: white;
+    font-size: 14px;
+}
+
+
+select {
+    font-size: 12px;
+    cursor: pointer;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    line-height: inherit;
+}

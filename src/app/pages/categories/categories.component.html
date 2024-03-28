@@ -1,0 +1,48 @@
+<header>
+    <h1>Catégories</h1>
+    <app-tab [svg]="TabSvg.Group" [signalIsActive]="isList" ></app-tab>
+    <app-tab [svg]="TabSvg.Sort" [signalIsActive]="isSort"></app-tab>
+</header>
+
+<main>
+    <div class="search">
+        <form [formGroup]="searchForm">
+            <div class="input">
+                <mat-icon svgIcon="search"></mat-icon>
+                <input type="text" formControlName="search" placeholder="Rechercher une catégorie">
+            </div>
+            <div class="select">
+                <select formControlName="group">
+                    <option [ngValue]="-1">Tous les groupes de catégories </option>
+                    <option *ngFor="let state of (group$ | async)" [ngValue]="state.id">
+                        {{ state.name }}
+                    </option>
+                </select>
+                <mat-icon svgIcon="arrow"></mat-icon>
+              </div>
+            
+        </form>
+    </div>
+    @if (!isList()) {
+        <div class="categories withBorder">
+            @for (item of (allVisibleCategories$ | async); track item.id) {
+                <app-category [text]="item.description" [title]="item.wording" [pill]="{color: item?.group?.color || Pill.Default, text: item.group?.name || ''}" [isSelected]="false"></app-category>
+            }
+        </div>
+    } @else {
+        @for (group of (allVisibleCategoriesByGroup$ | async); track group.id) {
+            <app-pill [color]="group.color || Pill.Default" [text]="group.name" [hasRadius]="false"></app-pill>
+            <div class="categories">
+                @for (category of group.categories; track category.id) {
+                    <app-category [text]="category.description" [title]="category.wording" [isSelected]="false"></app-category>
+                }
+            </div>
+        }
+    }
+</main>
+
+<footer>
+    <button class="primary" (click)="handleSaveSelectedCategories()">
+        Séléctionner la catégorie
+    </button>
+</footer>

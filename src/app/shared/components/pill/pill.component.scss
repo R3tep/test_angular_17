@@ -1,0 +1,57 @@
+
+
+.pill {
+
+    display: flex;
+    height: 20px;
+    padding: 0px 16px;
+    font-size: 12px;
+
+    > p {
+        display: flex;
+        align-items: center;
+    }
+
+    &.with-radius {
+        border-radius: 16px;
+        padding: 0px 12px;
+        width: fit-content;
+    }
+
+    &.m-green {
+        background-color: #ccffcc;
+        > p {
+            color: #00b300;
+        }
+    }
+    &.m-purple {
+        background-color: #ffccf2;
+        > p {
+            color: #b30086;
+        }
+    }
+    &.m-pink {
+        background-color: #ffccdd;
+        > p {
+            color: #b3003b;
+        }
+    }
+    &.m-blue {
+        background-color: #f1f7fc;
+        > p {
+            color: #11abec;
+        }
+    }
+    &.m-red {
+        background-color: #ffece6;
+        > p {
+            color: #fd755f;
+        }
+    }
+    &.m-grey {
+        background-color: #e6e6e6;
+        > p {
+            color: #595959;
+        }
+    }
+}

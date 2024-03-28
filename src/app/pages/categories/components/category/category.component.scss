@@ -1,0 +1,45 @@
+
+:host {
+    cursor: pointer;
+    height: 100%;
+    display: block;
+    .category {
+        background-color: white;
+       //* border: 1px solid #DCE4ED;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        padding: 16px;
+
+        &.selected {
+            background-color: #F3F5F8;
+        }
+
+        &:hover {
+            border: 1px solid #11ABEC;
+            background-color: #F1F7FC;
+        }
+
+        > .pill {
+            padding-top: 8px;
+        }
+
+        > h3 {
+            &.padding-top {
+                padding-top: 8px;
+            }
+
+            padding-bottom: 8px;
+
+            font-family: Eina03;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        > p {
+            font-size: 14px;
+            color: #636970;
+        }
+
+    }
+}
